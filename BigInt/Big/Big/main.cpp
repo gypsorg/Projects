@@ -10,6 +10,7 @@ class HugeInt {
         HugeInt(const HugeInt&);
         HugeInt(const int&);
         HugeInt(const std::string&);
+        
 
         HugeInt& operator=(const HugeInt&);
         HugeInt& operator=(const int&);
@@ -61,11 +62,7 @@ bool HugeInt::operator!=(const int& num) const {
 }
 
 
-HugeInt& HugeInt::operator=(const HugeInt& num) {
-    value = num.value;
 
-    return *this;
-}
 
 
 HugeInt& HugeInt::operator=(const int& num) {
@@ -149,6 +146,11 @@ HugeInt HugeInt::operator+(const HugeInt& num) const {
 
     return result;
 }
+HugeInt& HugeInt::operator=(const HugeInt& num) {
+    value = num.value;
+    return *this;
+}
+
 
 
 HugeInt HugeInt::operator*(const HugeInt& num) const {
@@ -159,12 +161,25 @@ HugeInt HugeInt::operator*(const HugeInt& num) const {
     if (num == 1)
      return *this;
 
-    HugeInt product;
-    while( num-1!=0){
-        product=num.value+this->value;
+    HugeInt product("0");
+    std::cout<<num.value;
+    HugeInt x=num.value;
+    int i=1;
+    while(x!=0) {std::cout<<"\nme";
+        x=x-1;
+        product=product+num.value+this->value;
+        std::cout<<product;
     }
+    /*
+    while( x-1!=0){
+        std::cout<<++i;
+        product=num.value+this->value;
+        
+        x=num-1;
+    }
+    */
 
-    return product;
+    return 0;
 }
 
 
@@ -186,10 +201,11 @@ std::ostream& operator<<(std::ostream& out, const HugeInt& num) {
 
 
 int main(){
-    HugeInt t1("123");
-    HugeInt t2("700");
+    HugeInt t1;
+    HugeInt t2;
     HugeInt t3;
-    std::cin>>t3;
+    std::cin>>t1>>t2>>t3;
+    std::cout<<std::endl;
     std::cout<<t1+t2<<std::endl;
     std::cout<<t3*t1;
 }
