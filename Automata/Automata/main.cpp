@@ -10,7 +10,11 @@ int main(int argc, const char * argv[]) {
     std::cout<<"At first I will ask for Lambda functions (what to print), ";
     std::cout<<"it will be 16 querries\n Then what state automata will convert to ";
     std::cout<<"it will also be 16 querries\n";
-    
+    int alphnum=4;
+    char alph[alphnum];
+    while (alphnum--) {
+        std::cout<<"x";
+    }
     
     
 
