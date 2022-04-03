@@ -12,8 +12,10 @@ int main(int argc, const char * argv[]) {
     std::cout<<"it will also be 16 querries\n";
     int alphnum=4;
     char alph[alphnum];
-    while (alphnum--) {
+    
+    while (static int i=0 && i!=alphnum) {
         std::cout<<"x";
+        i++;
     }
     
     
